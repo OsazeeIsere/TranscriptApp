@@ -1,0 +1,70 @@
+﻿@model TranscriptApp.Models.FinalApprovedResult
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>FinalApprovedResult</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SessionId" class="control-label"></label>
+                <select asp-for="SessionId" class ="form-control" asp-items="ViewBag.SessionId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DepartmentId" class="control-label"></label>
+                <select asp-for="DepartmentId" class ="form-control" asp-items="ViewBag.DepartmentId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FacultyId" class="control-label"></label>
+                <select asp-for="FacultyId" class ="form-control" asp-items="ViewBag.FacultyId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseId" class="control-label"></label>
+                <select asp-for="CourseId" class ="form-control" asp-items="ViewBag.CourseId">Select A Program</select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProgramDuratin" class="control-label"></label>
+                <input asp-for="ProgramDuratin" class="form-control" />
+                <span asp-validation-for="ProgramDuratin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProgramType" class="control-label"></label>
+                <input asp-for="ProgramType" class="form-control" />
+                <span asp-validation-for="ProgramType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FileUpload" class="control-label"></label>
+                <input asp-for="FileUpload" name="uploadResult" type="file" class="form-control" />
+                <span asp-validation-for="FileUpload" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="CreatedAt" class="control-label"></label>
+                <input asp-for="CreatedAt" class="form-control" />
+                <span asp-validation-for="CreatedAt" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <input asp-for="CreatedBy" type="hidden" />
+            </div>
+            @{
+                ViewBag.Result = "Good";
+            }
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

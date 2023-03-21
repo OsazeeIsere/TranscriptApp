@@ -1,0 +1,13 @@
+﻿global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.Infrastructure;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.AspNetCore.Identity;
+global using System.ComponentModel.DataAnnotations;
+global using System.ComponentModel.DataAnnotations.Schema;
+global using TranscriptApp.Models;
+global using TranscriptApp.Data;
+global using TranscriptApp.Controllers;
+//global using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.AspNetCore.Authorization;
+global using static TranscriptApp.Models.Enum;
